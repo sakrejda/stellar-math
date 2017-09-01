@@ -1,0 +1,34 @@
+
+
+State:
+- Max addition (K[+]), 1 at beginning
+- Max subtraction (K[-]), 1 at beginning
+- Addition timing matrix: K[+] x K[+]
+- Addition timing matrix: K[-] x K[-]
+
+
+Pick new problem:
+  - If all timings for addition < t_star[add]
+    - increment add max
+    - augment add timing matrix
+  - If all timings for subtraction < t_star[subtract], 
+    - increment subtract max, 
+    - augment timing matrix
+  - Take vector of operations (M) and their 'max' state
+     - calculate max of `max` (J)
+     - calculate Pr[i=m] = (J - M[m]), normalized
+     - sample an operator
+  - Take timing matrix as vector:
+     - calculate Pr[K=k] = theta + (1-theta) * timing[k]/sum[timing]
+     - sample an entry of timing matrix
+     - calculate indexes for that entry
+  - Call class to produce question for the combo of: 
+     - operator
+     - A
+     - B
+  - Present question, stay here till right answer is presented.
+  - Get answer, store timing in matrix for it's operator
+
+
+
+

@@ -1,0 +1,29 @@
+Adding: 1-10
+
+Subtraction: 5-0
+
+entry[k]: number, number, answer, vector<times> timing
+
+Pr[K=k] = 0.1 + 0.9 * timing[k]/sum[timing]
+
+Components: 
+ - numbers 1:J
+ - operators: +/-
+
+Start with J = 1, K = 1:J
+
+- Create map<operator, vector<entry>> for all k, 1:K
+
+- Pick a k, look at entry[k]
+  - Take number ("A")
+  - Take number ("B")
+  - Take operator
+- Show question
+- Record answer
+- Check answer:
+  - Wrong answer: go back to show question
+  - Right answer: record time in entry[k]
+
+
+
+
